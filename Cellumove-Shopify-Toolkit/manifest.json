@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Cellumove Shopify Toolkit",
+  "version": "1.0.0",
+  "description": "Automation tools for Shopify products.",
+
+"permissions": [
+  "activeTab",
+  "storage",
+  "tabs",
+  "scripting"
+],
+
+  "host_permissions": [
+    "https://admin.shopify.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://admin.shopify.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
